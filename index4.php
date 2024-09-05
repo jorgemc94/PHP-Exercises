@@ -18,8 +18,9 @@ if (isset($_GET['id'])) {
     <ul>
         <li>Name: <?= htmlspecialchars($foundRoom['roomType']) ?></li>
         <li>Number: <?= htmlspecialchars($foundRoom['roomNumber']) ?></li>
-        <li>Price: $<?= htmlspecialchars($foundRoom['price']) ?></li>
+        <li>Price: <?= htmlspecialchars($foundRoom['price']) ?>$</li>
         <li>Discount: <?= htmlspecialchars($foundRoom['discount']) ?>%</li>
+        <li>Price Discount: <?= htmlspecialchars($room['price'] - ($room['price'] * ($room['discount'] / 100))) ?>$</li>
     </ul>
 <?php elseif (isset($id)): ?>
     <p>id not found</p>
