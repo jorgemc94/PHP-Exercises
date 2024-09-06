@@ -1,7 +1,7 @@
 <?php
 $mysqli = new mysqli("localhost", "root", "Jorg€94", "miranda");
 if ($mysqli->connect_errno) {
-    echo "Error al conectar con MySQL: " . $mysqli->connect_error;
+    echo "Failed to connect to MySQL:" . $mysqli->connect_error;
     exit();
 }
 
@@ -15,7 +15,7 @@ if (isset($_GET['search']) && !empty($_GET['search'])) {
 $rooms = $mysqli->query($sql);
 
 if (!$rooms) {
-    echo "Error en la consulta: " . $mysqli->error;
+    echo "Query error:" . $mysqli->error;
     exit();
 }
 ?>
